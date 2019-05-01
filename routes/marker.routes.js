@@ -9,16 +9,11 @@ router.post('/markers', marker.create);
 router.get('/markers', marker.findAll);
 
 // Retrieve a single Marker with markerId
-router.get('/markers/:markerId', marker.findOne)
+router.get('/markers/:markerId', marker.findOne);
+
+// Update a marker with markerId
+router.put('/markers/:markerId', marker.update);
+
+// Delete a Marker with markerId
+router.delete('/markers/:markerId', marker.deleteMarker);
 module.exports = router;
-
-
-    
-    // // Retrieve a single Marker with markerId
-    // app.get('/markers/:markerId', notes.findOne);
-
-    // // Update a marker with markerId
-    // app.put('/markers/:markerId', notes.update);
-
-    // // Delete a Marker with markerId
-    // app.delete('/markers/:markerId', notes.delete);
