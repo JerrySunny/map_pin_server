@@ -81,7 +81,7 @@ const update = async (req, res, next) => {
 const deleteMarker = async (req, res, next) => {
     try {
         const deletedMarker = await Marker.findByIdAndRemove(req.params.markerId);
-        if (!deletedMarker || _.isEmpty(req.body)) {
+        if (!deletedMarker) {
             const error = new Error("marker not found with id " + req.params.markerId);
             next(error);
         }

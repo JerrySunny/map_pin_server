@@ -9,7 +9,16 @@ const errorLog = (message, content) => {
     };
     return logger.error(JSON.stringify(errorContent));
 };
-
+/* This method is used for creating INFO logs in application log file */
+const infoLog = (message, requestId) => {
+    const logger = log4js.getLogger('appLogs');
+    logger.addContext('logType', 'appLogs');
+    const infoContent = {
+      Message: message,
+    };
+    return logger.info(JSON.stringify(infoContent));
+  };
 module.exports = {
-    errorLog
+    errorLog,
+    infoLog
 };
